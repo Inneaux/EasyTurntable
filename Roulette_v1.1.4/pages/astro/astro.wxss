@@ -1,0 +1,61 @@
+/**index.wxss**/
+.container{
+  background-color:#2e2e2e;
+  align-items:center;
+}
+
+.navi{
+  color:#88ADA6;
+  position:fixed;
+  top:15rpx;
+  left:15rpx;
+}
+
+.pairwork{
+  color:plum;
+  position:fixed;
+  top:15rpx;
+  text-align:center;
+}
+
+.resetPanel{
+  color:#c9dd22;
+   position:fixed;
+   top:15rpx;
+   right:15rpx;
+   text-align:right;
+}
+
+.banner{
+  display:flex;
+  width:100%;
+  align-items:center;
+  justify-content:center;
+  /*background-color:red;*/
+  font-size:80rpx;
+  color:wheat;
+}
+
+
+.button-hover{
+  box-shadow:0 0 15rpx #a3a3a3;
+  background:#e2e2e2;
+  color: #2e2e2e;
+}
+
+
+canvas{
+  display:flex;
+}
+
+.button_rotate{
+  display:flex;
+  font-size:50rpx;
+  background:wheat;
+  box-shadow:0rpx 4rpx 10rpx #2e2e2e;
+}
+
+
+.hide_them{
+  display:none;
+}

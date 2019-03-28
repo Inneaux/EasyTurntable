@@ -1,0 +1,33 @@
+<!--index.wxml-->
+
+
+<view charset="utf-8" class="container" style="height:{{hRes}}px">
+  <!--transportal-->
+  <navigator url="../roulette/roulette" open-type="redirect" class="{{showRotateBut?'navi':'hide_them'}}">普通转盘</navigator>
+  <view class="{{showRotateBut?'pairwork':'hide_them'}}" bindtap="pairMode">{{pairWord}}</view>
+  <view class="{{showRotateBut?'resetPanel':'hide_them'}}" bindtap="drawCircle">换个颜色</view>
+
+  <!--welcome text-->
+  <view  class="banner" style="position:fixed;top:{{hRes/9}}px;height:{{hRes/7}}px">
+    <text>{{myTopOne}}{{myTopTwo}}</text>
+  </view>
+
+  <view style="display:flex;justify-content:center;align-items:center;position:fixed;top:{{7*hRes/24}}px;left:0; width: 750rpx;height: {{hRes/2.4}}px">
+    <canvas style="position:absolute;top:0;left:900rpx; width: {{hRes/2.4}}px; height: {{hRes/2.4}}px"  canvas-id="roulettePanel">
+    </canvas>
+
+    <canvas style="position:absolute;top:{{hRes/2.4}}px;left:900rpx;width: {{hRes/2.4}}px; height: {{hRes/2.4}}px"  canvas-id="pointArrow">
+    </canvas>
+
+    <image src="{{roulettePath}}" style="position:absolute;z-index:1;top:0;left:375rpx-{{hRes/2.4}}px;height:{{hRes/2.4}}px;width:{{hRes/2.4}}px;border-radius:{{hRes/2.4}}px"  animation="{{rotAnime}}"></image>
+    
+    <image src="{{arrowPath}}" style="position:absolute;top:0;left:0;z-index:2;height:{{hRes/2.4}}px;width:{{hRes/2.4}}px;border-radius:{{hRes/2.4}}px">
+    </image>
+   
+  </view>
+
+
+  <view style="position:fixed;top:{{hRes/7*5.5}}px">
+    <button class="{{showRotateBut?'button_rotate':'hide_them'}}" style="{{pmode?'background:plum;color:#4c221b':''}}"hover-class="button-rhover" bindtap="myRotate">{{rotateWord}}</button>
+  </view>
+</view>

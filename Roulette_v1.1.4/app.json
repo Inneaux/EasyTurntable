@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/roulette/roulette",
+    "pages/astro/astro"
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
+}

@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<view class="container" style="height:{{hRes}}px">
+  <!--transportal-->
+  <navigator url="../astro/astro" open-type="redirect" class="{{!arrowPath||showRotateBut?'navi':'hide_them'}}">星座转盘</navigator>
+  <view class="{{!arrowPath||showRotateBut?'score':'hide_them'}}" bindtap="scoreMode">{{scoreWord}}</view>
+  <view class="{{showRotateBut?'resetPanel':'hide_them'}}" data-value="1" bindtap="cubeClick">换个颜色</view>
+
+  <view class="{{sMode?'scorePanel':'hide_them'}}" style="position:fixed;top:70rpx;height:{{hRes/7-wRes/375*35}}px;width:100%">
+    <text>{{curScore}} / {{fullScore}}</text>
+    <view bindlongpress="resetScore" style="position:fixed;right:15rpx;color:#E0F0E9;font-size:36rpx">重置分数</view>
+  </view>
+
+  <!--welcome text-->
+  <view class="banner" style="position:fixed;top:{{hRes/7}}px;height:{{hRes/7}}px;">
+    <text>{{myTopOne}}{{myTopTwo}}{{myTopThree}}</text>
+  </view>
+
+  <!--九宫格按钮-->
+  <view class="button_nine" style="position:fixed;z-index:0;top:{{hRes/7*2}}px;height:{{hRes/14}}px">
+    
+    <button class="cube" hover-class="button-hover" data-value="2" bindtap="cubeClick">2</button>
+    <button class="cube" hover-class="button-hover" data-value="3" bindtap="cubeClick">3</button>
+    <button class="cube" hover-class="button-hover" data-value="4" bindtap="cubeClick">4</button>
+    <button class="cube" hover-class="button-hover" data-value="5" bindtap="cubeClick">5</button>
+    <button class="cube" hover-class="button-hover" data-value="6" bindtap="cubeClick">6</button>
+    <button class="cube" hover-class="button-hover" data-value="7" bindtap="cubeClick">7</button>
+    <button class="cube" hover-class="button-hover" data-value="8" bindtap="cubeClick">8</button>
+    <button class="cube" hover-class="button-hover" data-value="9" bindtap="cubeClick">9</button>
+    <button class="cube" hover-class="button-hover" data-value="10" bindtap="cubeClick">10</button>
+
+    <view class="{{!showRotateBut&&arrowPath?'blank':'hide_them'}}" style="width:750rpx;height:{{hRes/14}}px"></view>
+  </view>
+
+  <!--结果
+  <view class="result" style="position:fixed;top:{{hRes/7*6}}px;height:55rpx">
+    {{result}}
+  </view>
+  -->
+<!--animation="{{rotAnime}}"!-->
+  <view style="display:flex;justify-content:center;align-items:center;position:fixed;top:{{hRes/2.4}}px;left:0; width: 750rpx;height: {{hRes/2.4}}px">
+    <canvas style="position:absolute;top:0;left:900rpx; width: {{hRes/2.4}}px; height: {{hRes/2.4}}px"  canvas-id="roulettePanel">
+    </canvas>
+
+    <canvas style="position:absolute;top:{{hRes/2.4}}px;left:900rpx;width: {{hRes/2.4}}px; height: {{hRes/2.4}}px"  canvas-id="pointArrow">
+    </canvas>
+
+    <image src="{{roulettePath}}" style="position:absolute;z-index:1;top:0;left:375rpx-{{hRes/2.4}}px;height:{{hRes/2.4}}px;width:{{hRes/2.4}}px;border-radius:{{hRes/2.4}}px"  animation="{{rotAnime}}"></image>
+    
+    <image src="{{arrowPath}}" style="position:absolute;top:0;left:0;z-index:2;height:{{hRes/2.4}}px;width:{{hRes/2.4}}px;border-radius:{{hRes/2.4}}px">
+    </image>
+   
+  </view>
+
+
+  <view style="position:fixed;top:{{hRes/7*6}}px">
+    <button class="{{showRotateBut?'button_rotate':'hide_them'}}" hover-class="button-rhover" bindtap="myRotate">转我</button>
+  </view>
+</view>
